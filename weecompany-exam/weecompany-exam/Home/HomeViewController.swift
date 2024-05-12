@@ -21,12 +21,13 @@ class HomeViewController: UIViewController {
         button.setTitle("Buscar country", for: .normal)
         button.backgroundColor = .systemYellow
         button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(goToSearch), for: .touchUpInside)
         return button
     }()
     
     
     lazy var vStackViewOptionButtons : UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [btnAllCountriesOption,btnSearchCountry])
+        let stack = UIStackView(arrangedSubviews: [btnSearchCountry,btnAllCountriesOption])
         stack.axis = .vertical
         stack.spacing = 10
         stack.translatesAutoresizingMaskIntoConstraints = false

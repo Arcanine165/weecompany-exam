@@ -16,4 +16,12 @@ extension HomeViewController{
         presenter.service = AllCountriesService()
         navigationController?.pushViewController(vc, animated: true)
     }
+    @objc func goToSearch(){
+        let vc = SearchCountryViewController()
+        let service = SearchCountryService()
+        let presenter = SearchCountryPresenter(view: vc, service: service)
+        vc.presenter = presenter
+        navigationController?.pushViewController(vc, animated: true)
+
+    }
 }

@@ -7,4 +7,5 @@ target 'weecompany-exam' do
 
   # Pods for weecompany-exam
   pod 'Kingfisher', '~> 7.0'
+  pod 'IQKeyboardManager'
 end

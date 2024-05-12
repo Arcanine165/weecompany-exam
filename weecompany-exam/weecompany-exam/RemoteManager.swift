@@ -24,13 +24,19 @@ final class RemoteManager{
             let httpResponse = response as? HTTPURLResponse
             if let code =  httpResponse?.statusCode, code >= 400 {
                 completion(.failure(NetworkError.httpError))
+                return
             }
             do{
                 let response = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(response))
             }catch{
-                print(error)
-                completion(.failure(NetworkError.canNotParseData))
+                do{
+                    let decodeError = try JSONDecoder().decode(ServiceError.self, from: data)
+                    completion(.failure(NetworkError.pageNotFound))
+                }catch{
+                    completion(.failure(NetworkError.pageNotFound))
+                }
+                
             }
         }.resume()
         
@@ -59,6 +65,7 @@ enum NetworkError : Error {
     case urlError
     case canNotParseData
     case httpError
+    case pageNotFound
 }
 
 enum Endpoint : String {
@@ -66,3 +73,7 @@ enum Endpoint : String {
     case name = "name/"
 }
 
+struct ServiceError : Codable{
+    let message : String
+    let status : Int
+}
