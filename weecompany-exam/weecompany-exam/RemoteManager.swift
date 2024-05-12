@@ -29,7 +29,7 @@ final class RemoteManager{
                 let response = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(response))
             }catch{
-                print(error.localizedDescription)
+                print(error)
                 completion(.failure(NetworkError.canNotParseData))
             }
         }.resume()
