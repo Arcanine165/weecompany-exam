@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     let btnAllCountriesOption : UIButton = {
         let button = UIButton()
-        button.setTitle("Todas los countries", for: .normal)
+        button.setTitle("Todas los paises", for: .normal)
         button.backgroundColor = .systemBlue
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(goToAllCountries), for: .touchUpInside)
@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     }()
     let btnSearchCountry : UIButton = {
         let button = UIButton()
-        button.setTitle("Buscar country", for: .normal)
+        button.setTitle("Buscar pais", for: .normal)
         button.backgroundColor = .systemYellow
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(goToSearch), for: .touchUpInside)

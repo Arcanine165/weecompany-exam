@@ -52,6 +52,7 @@ class SearchCountryViewController: UIViewController {
     }
     
     func setupUI(){
+        title = "Buscar Pais"
         view.backgroundColor = .white
         tfSearch.delegate = self
         view.addSubview(horizontalStack)
@@ -72,20 +73,10 @@ class SearchCountryViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    @objc func showRecents(){
-        tableView.isHidden.toggle()
-    }
+   
    
 }
 
-extension SearchCountryViewController : UITextFieldDelegate{
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let text = textField.text else {
-            return
-        }
-        presenter?.searchCountry(countryName: text)
-    }
-}
 
 extension SearchCountryViewController : SearchCountryViewProtocol{
     func showCountryNotFound() {
@@ -109,22 +100,4 @@ extension SearchCountryViewController : SearchCountryViewProtocol{
     
 }
 
-extension SearchCountryViewController : UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        recents?.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = recents?[indexPath.row] ?? ""
-        return cell ?? UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let name = recents?[indexPath.row] else {
-            return
-        }
-        goToDetail(countryName: name,comesFromRecents: true)
-    }
-    
-}
+

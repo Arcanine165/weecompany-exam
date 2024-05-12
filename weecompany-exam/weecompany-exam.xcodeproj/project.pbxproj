@@ -33,6 +33,10 @@
 		4120229E2BF074DB0080E253 /* SearchCountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4120229D2BF074DB0080E253 /* SearchCountryService.swift */; };
 		412022A12BF076650080E253 /* LocalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412022A02BF076650080E253 /* LocalManager.swift */; };
 		412022A52BF07B990080E253 /* CountryNotFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412022A42BF07B990080E253 /* CountryNotFoundViewController.swift */; };
+		412022A82BF0827A0080E253 /* SearchCountryViewController + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412022A72BF0827A0080E253 /* SearchCountryViewController + UITableView.swift */; };
+		412022AA2BF0829F0080E253 /* SearchCountryViewController + TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412022A92BF0829F0080E253 /* SearchCountryViewController + TextField.swift */; };
+		412022AC2BF082BA0080E253 /* SearchCountryViewController + Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412022AB2BF082BA0080E253 /* SearchCountryViewController + Actions.swift */; };
+		412022AF2BF082ED0080E253 /* CountryDetail + Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412022AE2BF082ED0080E253 /* CountryDetail + Actions.swift */; };
 		9717389879D9AEDC2F14FB2A /* Pods_weecompany_exam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B14069063620A3F3F099300 /* Pods_weecompany_exam.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +69,10 @@
 		4120229D2BF074DB0080E253 /* SearchCountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCountryService.swift; sourceTree = "<group>"; };
 		412022A02BF076650080E253 /* LocalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalManager.swift; sourceTree = "<group>"; };
 		412022A42BF07B990080E253 /* CountryNotFoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryNotFoundViewController.swift; sourceTree = "<group>"; };
+		412022A72BF0827A0080E253 /* SearchCountryViewController + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchCountryViewController + UITableView.swift"; sourceTree = "<group>"; };
+		412022A92BF0829F0080E253 /* SearchCountryViewController + TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchCountryViewController + TextField.swift"; sourceTree = "<group>"; };
+		412022AB2BF082BA0080E253 /* SearchCountryViewController + Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchCountryViewController + Actions.swift"; sourceTree = "<group>"; };
+		412022AE2BF082ED0080E253 /* CountryDetail + Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountryDetail + Actions.swift"; sourceTree = "<group>"; };
 		4FB682EFD99972370A54E9E2 /* Pods-weecompany-exam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weecompany-exam.debug.xcconfig"; path = "Target Support Files/Pods-weecompany-exam/Pods-weecompany-exam.debug.xcconfig"; sourceTree = "<group>"; };
 		6B14069063620A3F3F099300 /* Pods_weecompany_exam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weecompany_exam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0983A594B4D04720CF82A27 /* Pods-weecompany-exam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weecompany-exam.release.xcconfig"; path = "Target Support Files/Pods-weecompany-exam/Pods-weecompany-exam.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,11 +111,11 @@
 		412022572BEFFBC10080E253 /* weecompany-exam */ = {
 			isa = PBXGroup;
 			children = (
+				412022922BF060490080E253 /* Models */,
+				412022B02BF083190080E253 /* Library */,
 				4120229F2BF0765B0080E253 /* LocalManager */,
 				4120227C2BF0098C0080E253 /* RemoteManager */,
 				4120226D2BF004DA0080E253 /* Modules */,
-				412022582BEFFBC10080E253 /* AppDelegate.swift */,
-				4120225A2BEFFBC10080E253 /* SceneDelegate.swift */,
 				412022612BEFFBC10080E253 /* Assets.xcassets */,
 				412022632BEFFBC10080E253 /* LaunchScreen.storyboard */,
 				412022662BEFFBC10080E253 /* Info.plist */,
@@ -133,7 +141,6 @@
 			children = (
 				412022A22BF07B6D0080E253 /* PopUps */,
 				412022962BF06F140080E253 /* SearchCountry */,
-				412022922BF060490080E253 /* Models */,
 				412022842BF052610080E253 /* CountryDetail */,
 				412022772BF006250080E253 /* Home */,
 				4120226C2BF004D00080E253 /* AllCountries */,
@@ -177,6 +184,7 @@
 		412022842BF052610080E253 /* CountryDetail */ = {
 			isa = PBXGroup;
 			children = (
+				412022AD2BF082DA0080E253 /* Extensions */,
 				412022872BF0528B0080E253 /* CountryDetailProtocols.swift */,
 				412022852BF052760080E253 /* CountryDetailViewController.swift */,
 				412022892BF052EE0080E253 /* CountryDetailPresenter.swift */,
@@ -205,6 +213,7 @@
 		412022962BF06F140080E253 /* SearchCountry */ = {
 			isa = PBXGroup;
 			children = (
+				412022A62BF082660080E253 /* Extensions */,
 				412022972BF06F260080E253 /* SearchCountryViewController.swift */,
 				412022992BF071C40080E253 /* SearchCountryPresenter.swift */,
 				4120229B2BF071D60080E253 /* SearchCountryProtocols.swift */,
@@ -236,6 +245,33 @@
 				412022A42BF07B990080E253 /* CountryNotFoundViewController.swift */,
 			);
 			path = CountryNotFound;
+			sourceTree = "<group>";
+		};
+		412022A62BF082660080E253 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				412022A72BF0827A0080E253 /* SearchCountryViewController + UITableView.swift */,
+				412022A92BF0829F0080E253 /* SearchCountryViewController + TextField.swift */,
+				412022AB2BF082BA0080E253 /* SearchCountryViewController + Actions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		412022AD2BF082DA0080E253 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				412022AE2BF082ED0080E253 /* CountryDetail + Actions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		412022B02BF083190080E253 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				412022582BEFFBC10080E253 /* AppDelegate.swift */,
+				4120225A2BEFFBC10080E253 /* SceneDelegate.swift */,
+			);
+			name = Library;
 			sourceTree = "<group>";
 		};
 		5EDBA3D62FE83A8DCB7D8A18 /* Frameworks */ = {
@@ -372,13 +408,17 @@
 				412022732BF0058A0080E253 /* AllCountriesService.swift in Sources */,
 				412022832BF01CF00080E253 /* CountryCollectionViewCell.swift in Sources */,
 				4120225D2BEFFBC10080E253 /* HomeViewController.swift in Sources */,
+				412022A82BF0827A0080E253 /* SearchCountryViewController + UITableView.swift in Sources */,
 				4120229C2BF071D60080E253 /* SearchCountryProtocols.swift in Sources */,
 				412022952BF06B640080E253 /* CountryFlagViewController.swift in Sources */,
+				412022AC2BF082BA0080E253 /* SearchCountryViewController + Actions.swift in Sources */,
+				412022AF2BF082ED0080E253 /* CountryDetail + Actions.swift in Sources */,
 				412022882BF0528B0080E253 /* CountryDetailProtocols.swift in Sources */,
 				412022A52BF07B990080E253 /* CountryNotFoundViewController.swift in Sources */,
 				4120229A2BF071C40080E253 /* SearchCountryPresenter.swift in Sources */,
 				412022912BF05FC30080E253 /* CountryDetailModel.swift in Sources */,
 				412022752BF005940080E253 /* CountriesModel.swift in Sources */,
+				412022AA2BF0829F0080E253 /* SearchCountryViewController + TextField.swift in Sources */,
 				412022792BF0069E0080E253 /* HomeView + Actions.swift in Sources */,
 				412022812BF00E1C0080E253 /* AllCountriesViewController + UICollectionProtocols.swift in Sources */,
 				412022712BF0057D0080E253 /* AllCountriesPresenter.swift in Sources */,
