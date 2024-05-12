@@ -12,6 +12,7 @@ class CountryDetailViewController: UIViewController {
     var presenter : CountryDetailPresenterProtocol?
     var countryName : String?
     var countryMapUrl : String?
+    var flag : String?
     // MARK: - UI Variables
     let scrollView : UIScrollView = {
         let scroll = UIScrollView()
@@ -22,14 +23,6 @@ class CountryDetailViewController: UIViewController {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
-    }()
-    let imvCountry : UIImageView = {
-        let imv = UIImageView()
-        imv.contentMode = .scaleToFill
-        imv.clipsToBounds = true
-        imv.layer.cornerRadius = 10
-        imv.translatesAutoresizingMaskIntoConstraints = false
-        return imv
     }()
     let lblOfficialName : UILabel = {
         let label = UILabel()
@@ -65,6 +58,14 @@ class CountryDetailViewController: UIViewController {
         label.numberOfLines = 0
         return label
     }()
+    let btnShowCountryImage : UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Mostrar bandera", for: .normal)
+        btn.backgroundColor = .systemBlue
+        btn.layer.cornerRadius = 10
+        btn.addTarget(self, action: #selector(showCountryImage), for: .touchUpInside)
+        return btn
+    }()
     let btnGoToMaps : UIButton = {
         let btn = UIButton()
         btn.setTitle("Ir a mapas", for: .normal)
@@ -74,7 +75,7 @@ class CountryDetailViewController: UIViewController {
         return btn
     }()
     lazy var verticalStack : UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [imvCountry,lblOfficialName,lblCommonName,lblCapitalName,lblCurrency,lblCurrencySymbol,btnGoToMaps])
+        let stack = UIStackView(arrangedSubviews: [lblOfficialName,lblCommonName,lblCapitalName,lblCurrency,lblCurrencySymbol,btnShowCountryImage,btnGoToMaps])
         stack.axis = .vertical
         stack.spacing = 10
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -126,7 +127,12 @@ class CountryDetailViewController: UIViewController {
             UIApplication.shared.openURL(url)
         }
     }
-
+    @objc func showCountryImage(){
+        let vc = CountryFlagViewController()
+        vc.flag = flag
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
     
 
 }
@@ -135,7 +141,7 @@ extension CountryDetailViewController : CountryDetailViewProtocol{
     
     func loadInfo(country: Country) {
         self.countryMapUrl = country.maps.googleMaps
-        imvCountry.kf.setImage(with: URL(string: country.flags.png ?? ""))
+        self.flag = country.flags.png
         lblOfficialName.text = "Nombre oficial : \(country.name.official)"
         lblCommonName.text = "Nombre comun : \(country.name.common)"
         lblCapitalName.text = "Capital : \(country.capital?.joined(separator: ",") ?? "No hay")"

@@ -26,6 +26,7 @@
 		4120228A2BF052EE0080E253 /* CountryDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412022892BF052EE0080E253 /* CountryDetailPresenter.swift */; };
 		4120228C2BF052F60080E253 /* CountryDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4120228B2BF052F60080E253 /* CountryDetailService.swift */; };
 		412022912BF05FC30080E253 /* CountryDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412022902BF05FC30080E253 /* CountryDetailModel.swift */; };
+		412022952BF06B640080E253 /* CountryFlagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412022942BF06B640080E253 /* CountryFlagViewController.swift */; };
 		9717389879D9AEDC2F14FB2A /* Pods_weecompany_exam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B14069063620A3F3F099300 /* Pods_weecompany_exam.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		412022892BF052EE0080E253 /* CountryDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailPresenter.swift; sourceTree = "<group>"; };
 		4120228B2BF052F60080E253 /* CountryDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailService.swift; sourceTree = "<group>"; };
 		412022902BF05FC30080E253 /* CountryDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailModel.swift; sourceTree = "<group>"; };
+		412022942BF06B640080E253 /* CountryFlagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryFlagViewController.swift; sourceTree = "<group>"; };
 		4FB682EFD99972370A54E9E2 /* Pods-weecompany-exam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weecompany-exam.debug.xcconfig"; path = "Target Support Files/Pods-weecompany-exam/Pods-weecompany-exam.debug.xcconfig"; sourceTree = "<group>"; };
 		6B14069063620A3F3F099300 /* Pods_weecompany_exam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weecompany_exam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0983A594B4D04720CF82A27 /* Pods-weecompany-exam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weecompany-exam.release.xcconfig"; path = "Target Support Files/Pods-weecompany-exam/Pods-weecompany-exam.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		4120226D2BF004DA0080E253 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				412022932BF06B4C0080E253 /* CountryFlag */,
 				412022922BF060490080E253 /* Models */,
 				412022842BF052610080E253 /* CountryDetail */,
 				412022772BF006250080E253 /* Home */,
@@ -175,6 +178,14 @@
 				412022742BF005940080E253 /* CountriesModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		412022932BF06B4C0080E253 /* CountryFlag */ = {
+			isa = PBXGroup;
+			children = (
+				412022942BF06B640080E253 /* CountryFlagViewController.swift */,
+			);
+			path = CountryFlag;
 			sourceTree = "<group>";
 		};
 		5EDBA3D62FE83A8DCB7D8A18 /* Frameworks */ = {
@@ -311,6 +322,7 @@
 				412022732BF0058A0080E253 /* AllCountriesService.swift in Sources */,
 				412022832BF01CF00080E253 /* CountryCollectionViewCell.swift in Sources */,
 				4120225D2BEFFBC10080E253 /* HomeViewController.swift in Sources */,
+				412022952BF06B640080E253 /* CountryFlagViewController.swift in Sources */,
 				412022882BF0528B0080E253 /* CountryDetailProtocols.swift in Sources */,
 				412022912BF05FC30080E253 /* CountryDetailModel.swift in Sources */,
 				412022752BF005940080E253 /* CountriesModel.swift in Sources */,
