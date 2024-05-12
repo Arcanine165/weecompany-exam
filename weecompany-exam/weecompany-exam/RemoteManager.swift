@@ -63,5 +63,6 @@ enum NetworkError : Error {
 
 enum Endpoint : String {
     case all = "all"
+    case name = "name/"
 }
 

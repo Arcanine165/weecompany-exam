@@ -65,7 +65,6 @@ class CountryCollectionViewCell: UICollectionViewCell {
     func configCell(country : Country){
         imvCountry.kf.setImage(with: URL(string: country.flags.png ?? ""))
         lblCountryOfficialName.text = "\(country.name.official)"
-        print(country.currencies?.keys.first)
     }
     
 }

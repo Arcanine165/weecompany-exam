@@ -49,6 +49,14 @@ class AllCountriesViewController: UIViewController {
 }
 
 extension AllCountriesViewController : AllCountriesViewProtocol{
+    func goToDetail(name: String) {
+        let view = CountryDetailViewController()
+        let service = CountryDetailService()
+        let presenter = CountryDetailPresenter(view: view, service: service)
+        view.presenter = presenter
+        view.countryName = name
+        navigationController?.pushViewController(view, animated: true)
+    }
     func reloadData(countries : [Country]) {
         DispatchQueue.main.async { [weak self] in
             self?.countries = countries

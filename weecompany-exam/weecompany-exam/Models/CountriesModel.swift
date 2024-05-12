@@ -13,6 +13,7 @@ struct Country : Codable{
     let population : Int
     let flags : CountryFlags
     let currencies : [String:CountryCurrency]?
+    let capital : [String]?
     
 }
 private struct CustomCodingKeys: CodingKey {

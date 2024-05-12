@@ -15,6 +15,7 @@ protocol AllCountriesPresenterProtocol : AnyObject{
 
 protocol AllCountriesViewProtocol : AnyObject{
     func reloadData(countries: [Country])
+    func goToDetail(name : String)
 }
 
 protocol AllCountriesServiceProtocol : AnyObject{
